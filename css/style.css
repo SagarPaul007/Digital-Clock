@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Heebo", sans-serif;
+    padding: 10px;
+    transition: all 0.5s ease;
+}
+
+.dark {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    z-index: -10;
+}
+
+nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .logo {
+    font-weight: 500;
+}
+
+nav .mode {
+    cursor: pointer;
+    margin-left: 20px;
+    width: 35px;
+    height: 20px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+nav .m-active {
+    background-color: white;
+}
+
+nav .mode .circle {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 4px;
+}
+
+nav .mode .c-active {
+    margin-left: 18px;
+    background-color: black;
+}
+
+main {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .clock {
+    color: white;
+    width: 250px;
+    height: 250px;
+    background-color: rgb(0, 4, 27);
+    border-radius: 50%;
+    position: relative;
+}
+
+main .border {
+    margin: 50px 0;
+    width: 270px;
+    height: 270px;
+    background-color: rgb(255, 100, 100);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .clock .twelve {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+main .clock .three {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translate(100%, -50%);
+}
+
+main .clock .six {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+}
+
+main .clock .nine {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translate(-100%, -50%);
+}
+
+main .clock .needle {
+    width: 3px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+}
+
+main .clock .hour {
+    height: 50px;
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+main .clock .minute {
+    height: 90px;
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+main .clock .second {
+    width: 2px;
+    background-color: rgb(255, 100, 100);
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+main .clock .center-point {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(202, 202, 202);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+main .clock .center-point::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+main .time {
+    font-size: 60px;
+}
+
+main .date {
+    font-size: 20px;
+}
+
+footer {
+    margin-top: 100px;
+    text-align: center;
+    font-weight: 300;
+}
