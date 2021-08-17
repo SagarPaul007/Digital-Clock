@@ -12,10 +12,6 @@ mode.addEventListener("click", () => {
     document.querySelector("#container").classList.toggle("dark");
 });
 
-function scale(number, inMin, inMax, outMin, outMax) {
-    return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
-}
-
 const setTime = function () {
     let now = new Date();
     let hour = now.getHours();
@@ -25,9 +21,9 @@ const setTime = function () {
     let [day, month, date, year] = `${now}`.split(" ");
     let ampm = hour < 12 ? "AM" : "PM";
 
-    hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(newHour, 0, 11, 0,360) + scale(minute, 0, 59, 0, 30)}deg)`;
-    minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(minute, 0, 59, 0, 360)}deg)`;
-    secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(second, 0, 59, 0, 360)}deg)`;
+    hourEl.style.transform = `translate(-50%, -100%) rotate(${newHour*180/6 + minute*180/(6*60)}deg)`;
+    minuteEl.style.transform = `translate(-50%, -100%) rotate(${minute*180/30}deg)`;
+    secondEl.style.transform = `translate(-50%, -100%) rotate(${second*180/30}deg)`;
 
     timeEl.textContent = `${newHour === 0 ? "12" : newHour}:${minute < 10 ? "0"+minute : minute} ${ampm}`;
     dateEl.textContent = `${day}... ${month} ${date}, ${year}`;
